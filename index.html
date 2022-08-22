@@ -30,7 +30,7 @@
                         <div class="card-body">
                             <h5 class="justify-content-center d-flex card-title">SAKIB ALL-HASAN</h5>
                             <p class="card-text justify-content-center d-flex">All Rounder.</p>
-                            <button class="btn btn-primary w-100">SELECT</button>
+                            <button class="btn btn-primary w-100" onclick="addToSelectList(this)">SELECT</button>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
@@ -38,7 +38,7 @@
                         <div class="card-body">
                             <h5 class="justify-content-center d-flex card-title">TAMIM IQBAL</h5>
                             <p class="card-text justify-content-center d-flex">Batsman.</p>
-                            <button class="btn btn-primary w-100">SELECT</button>
+                            <button class="btn btn-primary w-100" onclick="addToSelectList(this)">SELECT</button>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
@@ -46,7 +46,7 @@
                         <div class="card-body">
                             <h5 class="justify-content-center d-flex card-title">ANAMUL HAQUE</h5>
                             <p class="card-text justify-content-center d-flex">Wicket Keepar.</p>
-                            <button class="btn btn-primary w-100">SELECT</button>
+                            <button class="btn btn-primary w-100" onclick="addToSelectList(this)">SELECT</button>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                         <div class="card-body">
                             <h5 class="justify-content-center d-flex card-title">LITON DAS</h5>
                             <p class="card-text justify-content-center d-flex">Wicket Keepar.</p>
-                            <button class="btn btn-primary w-100">SELECT</button>
+                            <button class="btn btn-primary w-100" onclick="addToSelectList(this)">SELECT</button>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
@@ -65,7 +65,7 @@
                         <div class="card-body">
                             <h5 class="justify-content-center d-flex card-title">MAHMUDULLAH RIYAD</h5>
                             <p class="card-text justify-content-center d-flex">All Rounder.</p>
-                            <button class="btn btn-primary w-100">SELECT</button>
+                            <button class="btn btn-primary w-100" onclick="addToSelectList(this)">SELECT</button>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
@@ -73,7 +73,7 @@
                         <div class="card-body">
                             <h5 class="justify-content-center d-flex card-title">MOSADDEK HOSSAIN</h5>
                             <p class="card-text justify-content-center d-flex">All Rounder.</p>
-                            <button class="btn btn-primary w-100">SELECT</button>
+                            <button class="btn btn-primary w-100" onclick="addToSelectList(this)">SELECT</button>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                         <div class="card-body">
                             <h5 class="justify-content-center d-flex card-title">Mustafizur Rahman</h5>
                             <p class="card-text justify-content-center d-flex">Wicket Keepar.</p>
-                            <button class="btn btn-primary w-100">SELECT</button>
+                            <button class="btn btn-primary w-100" onclick="addToSelectList(this)">SELECT</button>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
@@ -92,7 +92,7 @@
                         <div class="card-body">
                             <h5 class="justify-content-center d-flex card-title">Mushfiqur Rahim</h5>
                             <p class="card-text justify-content-center d-flex">Crecket Bowler.</p>
-                            <button class="btn btn-primary w-100">SELECT</button>
+                            <button class="btn btn-primary w-100" onclick="addToSelectList(this)">SELECT</button>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
@@ -100,7 +100,7 @@
                         <div class="card-body">
                             <h5 class="justify-content-center d-flex card-title">Sabbir Rahman</h5>
                             <p class="card-text justify-content-center d-flex">Batsman.</p>
-                            <button class="btn btn-primary w-100">SELECT</button>
+                            <button class="btn btn-primary w-100" onclick="addToSelectList(this)">SELECT</button>
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                         <div class="card-body">
                             <h5 class="justify-content-center d-flex card-title">Soumya Sarkar</h5>
                             <p class="card-text justify-content-center d-flex">All Rounder.</p>
-                            <button class="btn btn-primary w-100">SELECT</button>
+                            <button class="btn btn-primary w-100" onclick="addToSelectList(this)">SELECT</button>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
@@ -119,7 +119,7 @@
                         <div class="card-body">
                             <h5 class="justify-content-center d-flex card-title">Taskin Ahmed</h5>
                             <p class="card-text justify-content-center d-flex">Crecket Bowler.</p>
-                            <button class="btn btn-primary w-100">SELECT</button>
+                            <button class="btn btn-primary w-100" onclick="addToSelectList(this)">SELECT</button>
                         </div>
                     </div>
                     <div class="card" style="width: 18rem;">
@@ -127,7 +127,7 @@
                         <div class="card-body">
                             <h5 class="justify-content-center d-flex card-title">Mehidy Hasan</h5>
                             <p class="card-text justify-content-center d-flex">All Rounder.</p>
-                            <button class="btn btn-primary w-100">SELECT</button>
+                            <button class="btn btn-primary w-100" onclick="addToSelectList(this)">SELECT</button>
                         </div>
                     </div>
                 </div>
@@ -138,19 +138,27 @@
             <div class="col-4 mt-5">
 
                 <div class="d-flex flex-column gap-3 ">
-                    <div class="card d-flex flex-column gap-3 px-2 py-5" style="width: 18rem; height:345px ;">
 
-                        <div class="d-flex justify-content-center mb-3">
+                    <!-- select player sectio  -->
+                    <div class="card d-flex flex-column gap-3 px-2 py-3" style="width: 18rem; height:345px ;">
+
+                        <div class="d-flex justify-content-center">
                             <h2>Select-V</h2>
                         </div>
                         <div>
-                            <ol>
-                                <li>hello</li>
+                            <p class="text-center card-text">Total added Player- <span
+                                    id="total-selected-player-count">0</span>
+                            </p>
+                        </div>
+                        <div>
+                            <ol id="seleted-player">
 
                             </ol>
                         </div>
 
                     </div>
+
+                    <!-- player cost section  -->
                     <div class="card d-flex flex-column gap-3 px-2 py-5" style="width: 18rem;">
 
                         <div class="d-flex justify-content-center mb-3">
@@ -212,6 +220,7 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
     <!-- js link -->
+    <script src="js/app.js"></script>
 
 </body>
 
