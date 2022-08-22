@@ -1,6 +1,3 @@
-
-
-
 // selected player add on array
 
 let selectedPlayer = [];
