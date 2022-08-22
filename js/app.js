@@ -15,10 +15,12 @@ function addToSelectList(element) {
         playerAbelity: playerAbelity,
     }
     // push select player
-    selectedPlayer.push(selectPlayer);
-
-    if (selectedPlayer.length <= 5) {
+    if (selectedPlayer.length < 5) {
+        selectedPlayer.push(selectPlayer);
         element.classList.add("disabled");
+    }
+    else {
+        alert('Best Five Player Selected')
     }
     // call player displas function
     playerNameDisplay();
@@ -32,24 +34,67 @@ function playerNameDisplay() {
     const totalSelectedPlayer = document.getElementById("total-selected-player-count");
     const playerContainer = document.getElementById("seleted-player");
 
-    if (selectedPlayer.length <= 5) {
-        totalSelectedPlayer.innerText = selectedPlayer.length;
-        playerContainer.textContent = '';
-        for (let i = 0; i < selectedPlayer.length; i++) {
+    totalSelectedPlayer.innerText = selectedPlayer.length;
+    playerContainer.textContent = '';
 
-            selectedPlayerName = selectedPlayer[i].playerName;
+    for (let i = 0; i < selectedPlayer.length; i++) {
 
-            const ol = document.createElement('li');
-            ol.innerHTML = `
+        selectedPlayerName = selectedPlayer[i].playerName;
+
+        const ol = document.createElement('li');
+        ol.innerHTML = `
             <p>${selectedPlayerName}</p>
             `;
-            playerContainer.appendChild(ol);
-        }
+        playerContainer.appendChild(ol);
     }
+}
+
+// get input value form input filed 
+// this is a common function
+function getValue(element, text) {
+    const elementValue = document.getElementById(element).value;
+    if (elementValue > 0) {
+        const value = parseInt(elementValue);
+        return value;
+    }
+
     else {
-        alert('Best Five Player Selected');
+        alert('Please Enter Cost For ' + text);
+        return 0;
     }
 
 
 }
 
+//set value function
+//this is also a common function
+function setValue(element, value) {
+    element = document.getElementById(element);
+    element.innerText = value;
+}
+
+// calculate cost of selectedPlayer
+document.getElementById('calculat-btn').addEventListener('click', function () {
+    const numberOfPlayer = selectedPlayer.length;
+    const perPlayerCost = getValue('player-cost-filed', 'Player');
+
+    const costForPlayer = numberOfPlayer * perPlayerCost;
+    if (numberOfPlayer > 0) {
+        setValue('player-cost', costForPlayer);
+    }
+    else {
+        alert('Please Select A Player');
+    }
+});
+
+// calculat total cost for player
+document.getElementById('total-calculat').addEventListener('click', function () {
+    const playerCostString = document.getElementById('player-cost').innerText;
+    const playerCost = parseInt(playerCostString);
+
+    const manegerCost = getValue('maneger-cost-filed', 'Manager');
+    const coachCost = getValue('coach-cost-filed', 'Coach');
+
+    const totalExpence = playerCost + manegerCost + coachCost;
+    setValue('total-cost', totalExpence);
+})
